@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PokeDex retrofit</string>
+    <string name="pesquisa_dex">Nome ou número</string>
 </resources>
