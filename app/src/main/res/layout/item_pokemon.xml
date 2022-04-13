@@ -18,7 +18,8 @@
             android:id="@+id/item_img_pokemon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@null" />
 
     </androidx.cardview.widget.CardView>
 
@@ -63,9 +64,13 @@
             android:id="@+id/item_txt_type1"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/txt_form_style"
+            android:textColor="@color/white"
             android:gravity="center_horizontal"
             android:textAlignment="center"
-            tools:text="Type1" />
+            android:singleLine="true"
+            tools:text="Leaf" />
 
         <TextView
             android:id="@+id/item_txt_type2"
@@ -73,7 +78,10 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textAlignment="center"
-            tools:text="Type2" />
+            android:background="@drawable/txt_form_style"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            tools:text="Fire" />
 
     </LinearLayout>
 
