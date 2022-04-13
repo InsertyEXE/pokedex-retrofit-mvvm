@@ -8,9 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.pokedexretrofit.R
 import kotlinx.android.synthetic.main.item_pokemon.view.*
 
-class PokemonAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    val items: List<Pokemon> = ArrayList()
+class PokemonAdapter(val items: List<Pokemon>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class PokemonViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -25,9 +23,9 @@ class PokemonAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
             Glide.with(itemView).load(pokemon.imgThumb).into(pokeImage)
             pokeNome.text = pokemon.name
-            pokeNum.text = pokemon.number.toString()
-            pokeType1.text = pokemon.types[0]
-            pokeType2.text = pokemon.types[1]
+            pokeNum.text = pokemon.id.toString()
+            pokeType1.text = pokemon.types[0].toString()
+            pokeType2.text = pokemon.types[1].toString()
 
         }
     }
