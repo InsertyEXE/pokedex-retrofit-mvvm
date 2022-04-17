@@ -5,14 +5,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class PokemonRetrofitConfig {
 
-    companion object{
+    companion object {
 
-        fun retrofitConfig(): Retrofit{
-            return Retrofit.Builder().baseUrl("https://pokeapi.co/api/v2/")
+        fun retrofitConfig(): Retrofit {
+            val retrofit = Retrofit.Builder().baseUrl("https://pokeapi.co/api/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
+
+            return retrofit
 
         }
 
     }
 }
+
+//"https://pokeapi.co/api/v2/"

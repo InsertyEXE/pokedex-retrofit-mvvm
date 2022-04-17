@@ -11,7 +11,7 @@ import retrofit2.http.Query
 interface PokemonDexService {
 
     @GET("pokemon/{pokemon}")
-    fun buscarPokemon(@Path("pokemon") pokemon: Int): Call<Pokemon>
+    fun buscarPokemon(@Path("pokemon") pokemonUrl: String): Call<Pokemon>
 
     @GET("pokemon")
     fun listarPokemon(@Query("limit") limit: Int): Call<PokemonLista>
