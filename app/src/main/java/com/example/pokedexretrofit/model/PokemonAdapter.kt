@@ -21,11 +21,26 @@ class PokemonAdapter(val items: List<Pokemon>) : RecyclerView.Adapter<RecyclerVi
 
         fun bind(pokemon: Pokemon) {
 
+            val numeroFormatado = pokemon.id.toString().padStart(3, '0')
+            val imgThumb = "https://www.serebii.net/pokemongo/pokemon/$numeroFormatado.png"
+
+            pokemon.numeroFormatado = numeroFormatado
+            pokemon.imgThumb = imgThumb
+
             Glide.with(itemView).load(pokemon.imgThumb).into(pokeImage)
+
             pokeNome.text = pokemon.name
-            pokeNum.text = pokemon.id.toString()
-            pokeType1.text = pokemon.types[0].toString()
-            pokeType2.text = pokemon.types[1].toString()
+            pokeNum.text = "N° ${pokemon.numeroFormatado}"
+
+            if (pokemon.types.size > 1){
+                pokeType1.text = pokemon.types[0].type.name
+                pokeType2.text = pokemon.types[1].type.name
+            } else {
+                pokeType1.text = pokemon.types[0].type.name
+                pokeType2.visibility = View.GONE
+            }
+
+
 
         }
     }
