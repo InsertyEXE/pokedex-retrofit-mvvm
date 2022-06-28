@@ -45,8 +45,8 @@
         android:textAlignment="center"
         android:textColor="@color/blackPokeball"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@id/item_txt_numero"
 
+        app:layout_constraintEnd_toEndOf="@id/item_txt_numero"
         app:layout_constraintStart_toStartOf="@id/item_txt_numero"
         app:layout_constraintTop_toBottomOf="@id/item_txt_numero"
         tools:text="pokemono" />
