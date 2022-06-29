@@ -30,14 +30,17 @@ class MainViewModel(val repository: MainRepository) : ViewModel() {
 
                     val pokemons = response.body()?.results
 
-                    pokemons?.map {
+                    pokemons?.forEach {
 
-                        repository.buscarPokemon(it.name).enqueue(object : Callback<Pokemon> {
+                        val buscarPoke = repository.buscarPokemon(it.name)
+
+                        buscarPoke.enqueue(object : Callback<Pokemon> {
                             override fun onResponse(
                                 call: Call<Pokemon>,
                                 response: Response<Pokemon>
                             ) {
-                                pokemon.postValue(response.body())
+                                pokemon.value = response.body()
+
                             }
 
                             override fun onFailure(call: Call<Pokemon>, t: Throwable) {
