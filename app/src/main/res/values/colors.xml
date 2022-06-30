@@ -11,4 +11,5 @@
     <color name="redPokeball">#FFFF1D4B</color>
     <color name="blackPokeball">#313131</color>
     <color name="grayPokeball">#DDFFFFFF</color>
+    <color name="blueLight">#19C7FC</color>
 </resources>
